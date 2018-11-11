@@ -28,6 +28,7 @@ sudo service nginx restart
 #cd simple-sinatra-app
 
 
+cd sinatraproject
 
 bundle install
 
