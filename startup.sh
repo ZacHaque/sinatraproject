@@ -30,7 +30,9 @@ sudo service nginx restart
 
 
 bundle install
-bundle exec rackup
+
+
+bundle exec rackup --path /home/ubuntu/sin/simple-sinatra-app/
 
 
 
