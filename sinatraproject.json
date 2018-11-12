@@ -1,0 +1,33 @@
+{
+   "AWSTemplateFormatVersion" : "2010-09-09",
+   "Resources" : {
+		"SinatraSG" : {
+				"Type" : "AWS::EC2::SecurityGroup",
+				"Properties" : {
+		  			"GroupDescription" : "Enable HTTP and SSH",
+		  			"SecurityGroupIngress" : [
+					{"IpProtocol" : "tcp", "FromPort" : "80", "ToPort" : "80", "CidrIp" : "0.0.0.0/0"},
+					{"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : "0.0.0.0/0"}
+					  ]
+			}
+	  },
+	  
+		"SinatraEc2Instance" : {
+        		"Type" : "AWS::EC2::Instance",
+        		"Properties" : {
+           			"ImageId" : "ami-07a3bd4944eb120a0",
+           			"InstanceType" : "t2.micro",
+					"KeyName" : "MyWebServerSyd",
+					"SecurityGroupIds": [
+						{
+							"Ref": "SinatraSG"
+						}
+					],
+           			"UserData" : {"Fn::Base64" : {"Fn::Join" : ["", [
+            			"#include\n",
+            			"https://s3-ap-southeast-2.amazonaws.com/zahurul.info/startup.sh \n"
+            			] ] } }
+        			}
+      		}
+      }
+}
