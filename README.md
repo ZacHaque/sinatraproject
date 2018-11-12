@@ -1,1 +1,1 @@
-# sinatraproject
+# SinatraProject
