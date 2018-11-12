@@ -22,8 +22,8 @@ Prerequisite : Please note "sinatraproject.json" have Keyname called "MyWebServe
 
 Here are the steps to deploy this app by AWS Cloud Formation
 
-1. On AWS Console, please go to cloud formation and create a stack by uploading template
-2. Select sinatraproject.json file and create stack, Please follow the deafult setting, Also need to provide a name for the stack
+1. On AWS Console, please go to cloud formation, choose to create a stack by uploading a template
+2. Use sinatraproject.json template file to be uploaded and create stack, Please follow the deafult setting, Also need to provide a name for the stack
 3. It will take 3-4 minutes to create the stack (Security Group and the EC2) + apply the bash script on the start up.
 4. Now please go to EC2 service page to find the public IP address
 5. Open a web browser and go to the ip address, it should be showing the Hello World! app.
